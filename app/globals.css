@@ -1,26 +1,42 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+
+  --color-bg-base: #0a192f;
+  /* --color-brand-primary: #74c69d; */
+  --color-brand-primary: #c084fc;
+  --color-brand-secondary: #49a078;
+  --color-text-base: #ccd6f6;
+  --color-text-muted: #64748b;
+  --height-navbar: 100px;
+  --height-navbar-scroll: 70px;
+  --ease-custom: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg-base);
+  color: var(--color-text-base);
+  box-sizing: border-box;
 }
+
+.burger-transition::before{
+  transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+}
+.burger-transition.active::before {
+  top: 0;
+  width: 30px;
+  transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s
+}
+
+.burger-transition::after{
+  transition: bottom 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+}
+
+.burger-transition.active::after {
+  bottom: 0;
+  width: 30px;
+  transform: rotate(-90deg);
+  transition: bottom 0.1s ease-out,opacity 0.1s ease-out 0.12s
+}
+
