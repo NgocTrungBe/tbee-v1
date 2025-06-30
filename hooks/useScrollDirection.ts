@@ -19,7 +19,7 @@ const useScrollDirection = (initialDirection = "down", thresholdPixels = 0) => {
         return;
       }
       setScrollDir(scrollY > lastScrollY ? SCROLL_DOWN : SCROLL_UP);
-      setScrolledToTop(scrollY < 50);
+      setScrolledToTop(scrollY < 20);
       lastScrollY = scrollY > 0 ? scrollY : 0;
       ticking = false;
     };
@@ -33,7 +33,7 @@ const useScrollDirection = (initialDirection = "down", thresholdPixels = 0) => {
 
     window.addEventListener("scroll", onScroll);
 
-    return () => window.removeEventListener("scroll", () => {});
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return { scrollDir, scrolledToTop };

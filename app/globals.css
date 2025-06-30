@@ -1,35 +1,62 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
-
-  --color-bg-base: #0a192f;
-  /* --color-brand-primary: #74c69d; */
+  --color-navy: #0a192f;
+  --color-light-navy: #112240;
+  --color-dark-slate: #495670;
   --color-brand-primary: #c084fc;
   --color-brand-secondary: #49a078;
-  --color-text-base: #ccd6f6;
-  --color-text-muted: #64748b;
+  --color-slate: #8892b0;
+  --color-lightest-slate: #ccd6f6;
   --height-navbar: 100px;
   --height-navbar-scroll: 70px;
   --ease-custom: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --font-fira: "Fira Code", "Fira Code Fallback";
 }
 
+html {
+  width: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+}
 
 body {
-  background: var(--color-bg-base);
-  color: var(--color-text-base);
+  background: var(--color-navy);
+  color: var(--color-lightest-slate);
   box-sizing: border-box;
+  font-family: var(--font-inter);
 }
 
-.burger-transition::before{
+body.overlay {
+  overflow: hidden;
+}
+
+body.overlay #content > * {
+  filter: blur(5px) brightness(0.7);
+  transition: all 0.25s var(--ease-custom);
+  pointer-events: none;
+  user-select: none;
+}
+
+.burger-transition::before {
   transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
 }
 .burger-transition.active::before {
   top: 0;
   width: 30px;
-  transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s
+  transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
 }
 
-.burger-transition::after{
+.burger-transition::after {
   transition: bottom 0.1s ease-in 0.25s, opacity 0.1s ease-in;
 }
 
@@ -37,6 +64,22 @@ body {
   bottom: 0;
   width: 30px;
   transform: rotate(-90deg);
-  transition: bottom 0.1s ease-out,opacity 0.1s ease-out 0.12s
+  transition: bottom 0.1s ease-out, opacity 0.1s ease-out 0.12s;
 }
 
+/* Scrollbar Styles */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-dark-slate) var(--color-navy);
+}
+/* ::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-navy);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-dark-slate);
+  border: 3px solid var(--color-navy);
+  border-radius: 10px;
+} */

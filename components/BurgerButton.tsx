@@ -14,9 +14,13 @@ const BurgerButton: FC<Props> = ({ isActive, onClick }) => {
   ].join(" ");
 
   return (
-    <button className="cursor-pointer p-4 mr-[-16px]" onClick={onClick}>
-      <div className="relative  w-[30px]">
-        <div className={burgerBoxClass}></div>
+    <button
+      className="relative p-4 mr-[-16px] cursor-pointer z-10"
+      aria-hidden={!isActive}
+      onClick={onClick}
+    >
+      <div className="relative w-[30px]">
+        <div className={burgerBoxClass} />
       </div>
     </button>
   );

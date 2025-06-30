@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
+import { Fira_Code, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 
-const geistMono = Geist_Mono({
+const firaCode = Fira_Code({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
-  variable: "--font-geist-mono",
+  variable: "--font-fira-code",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -22,9 +29,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistMono.className} antialiased`}>
+      <body className={`${firaCode.className} ${inter.className} antialiased`}>
         <Header />
-        {children}
+        <main
+          id="content"
+          className="max-w-screen-xl px-6 w-full mx-auto md:px-24 sm:px-12 "
+        >
+          {children}
+        </main>
       </body>
     </html>
   );
