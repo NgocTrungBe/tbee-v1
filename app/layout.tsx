@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fira_Code, Inter } from "next/font/google";
-import "./globals.css";
+import "@/styles/globals.scss";
 import Header from "@/components/Header";
 
 const firaCode = Fira_Code({
@@ -33,7 +33,7 @@ export default function RootLayout({
         <Header />
         <main
           id="content"
-          className="max-w-screen-xl px-6 w-full mx-auto md:px-24 sm:px-12 "
+          className="max-w-screen-xl px-6 w-full mx-auto md:px-24 sm:px-12"
         >
           {children}
         </main>

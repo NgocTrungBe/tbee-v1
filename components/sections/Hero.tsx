@@ -2,6 +2,7 @@
 import { motion, easeOut } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import ResumeButton from "../ResumeButton";
+import HighlightLink from "../HighlightLink";
 
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -57,8 +58,10 @@ const Hero = () => {
             variants={fadeUp}
             className="max-w-[540px] mb-12 text-slate text-base break-words whitespace-pre-line"
           >
-            I specialize in building accessible, performant UIs with a focus on
-            UX best practices and visual consistency.
+            I specialize in building accessible, performant user interfaces with
+            a strong focus on UX best practices and visual consistency. I
+            complex UI problems and continuously improving my{" "}
+            <HighlightLink>skills</HighlightLink>.
           </motion.p>
           <motion.div variants={fadeUp}>
             <ResumeButton path="/" size="large" text="View Full My Resume !" />

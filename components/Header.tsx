@@ -2,8 +2,8 @@
 
 import React from "react";
 import Nav from "./Nav";
-import useScrollDirection from "@/hooks/useScrollDirection";
 import Menu from "./Menu";
+import { useScrollDirection } from "@/hooks";
 
 const Header = () => {
   const { scrollDir, scrolledToTop } = useScrollDirection();

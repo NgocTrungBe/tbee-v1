@@ -1,8 +1,8 @@
-import { navs } from "@/data/nav";
 import React from "react";
 import Link from "next/link";
-import ResumeButton from "./ResumeButton";
 import { motion, easeOut } from "framer-motion";
+import ResumeButton from "./ResumeButton";
+import { navs } from "@/data";
 
 const Nav = () => {
   const container = {

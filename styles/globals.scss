@@ -1,0 +1,170 @@
+@use "./_mixins.scss" as *;
+@use "tailwindcss";
+
+@theme {
+  --color-navy: #0a192f;
+  --color-light-navy: #112240;
+  --color-lightest-navy: #233554;
+  --color-dark-slate: #495670;
+  --color-brand-primary: #c084fc;
+  --color-brand-secondary: #e0b3ff;
+  --color-slate: #8892b0;
+  --color-lightest-slate: #ccd6f6;
+  --height-navbar: 100px;
+  --height-navbar-scroll: 70px;
+  --ease-custom: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --font-fira: "Fira Code", "Fira Code Fallback";
+}
+
+html {
+  width: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-dark-slate) var(--color-navy);
+  counter-reset: section;
+}
+
+section {
+  counter-increment: section 1;
+
+  &.no-count {
+    counter-increment: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+}
+
+body {
+  background: var(--color-navy);
+  font-family: var(--font-inter);
+  color: var(--color-lightest-slate);
+  box-sizing: border-box;
+}
+
+body.overlay {
+  overflow: hidden;
+}
+
+body.overlay #content > * {
+  filter: blur(5px) brightness(0.7);
+  transition: all 0.25s var(--ease-custom);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Scrollbar Styles */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-navy);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-dark-slate);
+  border: 3px solid var(--color-navy);
+  border-radius: 10px;
+}
+
+.burger-transition {
+  &::before {
+    transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+  }
+  &::after {
+    transition: bottom 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+  }
+  &.active {
+    &::before {
+      top: 0;
+      width: 30px;
+      transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+    }
+    &::after {
+      bottom: 0;
+      width: 30px;
+      transform: rotate(-90deg);
+      transition: bottom 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+    }
+  }
+}
+
+.numbered-heading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px 0 40px 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-lightest-slate);
+  white-space: nowrap;
+
+  &::before {
+    position: relative;
+    bottom: -3px;
+    margin-right: 5px;
+    content: "0" counter(section) ".";
+    color: var(--color-brand-primary);
+    font-size: 18px;
+    font-family: var(--font-fira);
+    font-weight: 400;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: relative;
+    top: 2px;
+    margin-left: 10px;
+    width: 100%;
+    display: block;
+    height: 1px;
+    background-color: var(--color-lightest-navy);
+  }
+
+  @include tablet {
+    font-size: 28px;
+    &::before {
+      top: 4px;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+    &::after {
+      width: 200px;
+    }
+  }
+}
+
+.avatar-wrapper {
+  @apply relative rounded-lg transition-all duration-220 ease-custom hover:-translate-x-[4px] hover:-translate-y-[4px] cursor-pointer z-3;
+
+  img {
+    position: relative;
+    border-radius: 5px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    border: 2px solid #a855f7;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    transition: all 220ms var(--ease-custom);
+  }
+
+  &:hover::after {
+    transform: translate(8px, 8px);
+  }
+}

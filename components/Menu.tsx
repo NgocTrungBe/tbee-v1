@@ -2,8 +2,9 @@ import React, { RefObject, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ResumeButton from "./ResumeButton";
 import BurgerButton from "./BurgerButton";
-import { navs } from "@/data/nav";
-import { useClickOutside } from "@/hooks/useClickOutside";
+
+import { navs } from "@/data";
+import { useClickOutside } from "@/hooks";
 
 const Menu = () => {
   const menuRef = useRef<HTMLDivElement>(null);
