@@ -7,3 +7,8 @@ export type Job = {
   url: string;
   content: string[];
 };
+
+export type SKill = {
+  name: string;
+  icon: string;
+};

@@ -28,12 +28,12 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 2000);
+    const timeout = setTimeout(() => setIsMounted(true), 1600);
     return () => clearTimeout(timeout);
   }, []);
 
   return (
-    <motion.section className="md:mt-[var(--height-navbar)] md:pt-14 flex items-start justify-center md:justify-start flex-col min-h-screen h-screen">
+    <motion.section className="md:mt-[var(--height-navbar)] md:pt-14 flex items-start justify-center md:justify-start flex-col min-h-screen h-screen sm:min-h-[90vh] sm:h-[90vh]">
       {isMounted && (
         <motion.div variants={container} initial="hidden" animate="show">
           <motion.h1

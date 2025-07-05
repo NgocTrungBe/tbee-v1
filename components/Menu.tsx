@@ -5,6 +5,7 @@ import BurgerButton from "./BurgerButton";
 
 import { navs } from "@/data";
 import { useClickOutside } from "@/hooks";
+import { easeOut, motion } from "framer-motion";
 
 const Menu = () => {
   const menuRef = useRef<HTMLDivElement>(null);
@@ -39,13 +40,28 @@ const Menu = () => {
     " transition-all duration-300 ease-custom z-9",
   ].join(" ");
 
+  const fadeDown = {
+    hidden: { opacity: 0, y: -20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.8,
+        duration: 0.6,
+        ease: easeOut,
+      },
+    },
+  };
+
   return (
     <div ref={menuRef} className="md:hidden">
-      <BurgerButton
-        isActive={showMenu}
-        onClick={() => setShowMenu(!showMenu)}
-      />
-      <aside className={menuClass}>
+      <motion.div variants={fadeDown} initial="hidden" animate="show">
+        <BurgerButton
+          isActive={showMenu}
+          onClick={() => setShowMenu(!showMenu)}
+        />
+      </motion.div>
+      <aside className={menuClass} aria-hidden={!showMenu}>
         <ul className="h-full flex flex flex-col items-center justify-center">
           {navs &&
             navs.map((nav) => (

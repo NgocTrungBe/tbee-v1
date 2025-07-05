@@ -7,16 +7,16 @@ export const navs = [
   {
     id: 2,
     name: "Experience",
-    path: "/",
+    path: "/#experience",
   },
   {
     id: 3,
     name: "Work",
-    path: "/",
+    path: "/#work",
   },
   {
     id: 4,
     name: "Contact",
-    path: "/",
+    path: "/#contact",
   },
 ];

@@ -14,6 +14,10 @@
   --height-navbar-scroll: 70px;
   --ease-custom: cubic-bezier(0.645, 0.045, 0.355, 1);
   --font-fira: "Fira Code", "Fira Code Fallback";
+  --breakpoint-tiny: 26.875rem;
+  --tab-width: 120px;
+  --tab-max-width: 170px;
+  --tab-height: 42px;
 }
 
 html {
@@ -144,11 +148,13 @@ body.overlay #content > * {
 }
 
 .avatar-wrapper {
-  @apply relative rounded-lg transition-all duration-220 ease-custom hover:-translate-x-[4px] hover:-translate-y-[4px] cursor-pointer z-3;
+  @apply relative rounded-lg transition-all duration-220 ease-custom hover:-translate-x-[4px] hover:-translate-y-[4px] focus:-translate-x-[4px] focus:-translate-y-[4px] cursor-pointer z-3;
 
   img {
     position: relative;
     border-radius: 5px;
+    // filter: grayscale(100%) contrast(1);
+    // mix-blend-mode: multiply;
   }
 
   &::after {
@@ -164,7 +170,25 @@ body.overlay #content > * {
     transition: all 220ms var(--ease-custom);
   }
 
-  &:hover::after {
+  &:hover::after,
+  &focus::after {
     transform: translate(8px, 8px);
+  }
+}
+
+.skill-list {
+  @media (max-width: 440px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .skill-box {
+      justify-content: center;
+      padding: 8px;
+    }
+  }
+
+  @media (max-width: 340px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
