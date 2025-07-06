@@ -1,10 +1,10 @@
 "use client";
 
 import { easeOut, motion } from "framer-motion";
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 
 interface Props {
-  title: String;
+  title: string;
   centered?: boolean;
 }
 

@@ -11,12 +11,13 @@
   --color-slate: #8892b0;
   --color-light-slate: #a8b2d1;
   --color-lightest-slate: #ccd6f6;
+  // #b26dff
   --height-navbar: 100px;
   --height-navbar-scroll: 70px;
   --ease-custom: cubic-bezier(0.645, 0.045, 0.355, 1);
   --font-fira: "Fira Code", "Fira Code Fallback";
   --breakpoint-tiny: 26.875rem;
-  --tab-width: 120px;
+  --tab-width: 170px;
   --tab-max-width: 170px;
   --tab-height: 42px;
 }
@@ -146,16 +147,20 @@ body.overlay #content > * {
       width: 200px;
     }
   }
+
+  @media (max-width: 340px) {
+    font-size: 20px;
+  }
 }
 
 .avatar-wrapper {
-  @apply relative rounded-lg transition-all duration-220 ease-custom hover:-translate-x-[4px] hover:-translate-y-[4px] focus:-translate-x-[4px] focus:-translate-y-[4px] cursor-pointer z-3;
+  @apply relative rounded-lg bg-[#b26dff] transition-all duration-220 ease-custom hover:-translate-x-[4px] hover:-translate-y-[4px] focus:-translate-x-[4px] focus:-translate-y-[4px] cursor-pointer z-3;
 
   img {
     position: relative;
     border-radius: 5px;
-    // filter: grayscale(100%) contrast(1);
-    // mix-blend-mode: multiply;
+    filter: grayscale(100%) contrast(1);
+    mix-blend-mode: multiply;
   }
 
   &::after {
@@ -163,7 +168,7 @@ body.overlay #content > * {
     position: absolute;
     top: 14px;
     left: 14px;
-    border: 2px solid #a855f7;
+    border: 2px solid #b26dff;
     z-index: -1;
     width: 100%;
     height: 100%;
@@ -196,8 +201,8 @@ body.overlay #content > * {
 
 .project-image {
   grid-row: 1 / -1;
+
   & > a {
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     &::before {
       content: "";
       position: absolute;
@@ -209,6 +214,15 @@ body.overlay #content > * {
       mix-blend-mode: screen;
       z-index: 3;
     }
+    &:hover {
+      &::before,
+      .image-wrapper {
+        filter: none;
+        mix-blend-mode: normal;
+        background: transparent;
+        outline: 0;
+      }
+    }
   }
   .image-wrapper {
     height: 100%;
@@ -216,6 +230,11 @@ body.overlay #content > * {
     filter: grayscale(100%) contrast(1) brightness(50%);
     overflow: hidden;
     border-radius: 4px;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    @include tablet {
+      filter: grayscale(100%) contrast(1) brightness(90%);
+    }
   }
 }
 .project-links {
@@ -238,4 +257,8 @@ body.overlay #content > * {
 
 .project-content {
   grid-row: 1 / -1;
+  z-index: 5;
+  @include desktop {
+    z-index: unset;
+  }
 }

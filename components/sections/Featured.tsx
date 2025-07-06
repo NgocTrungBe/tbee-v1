@@ -5,7 +5,7 @@ import { featuredProjects } from "@/content/featured";
 
 const Featured = () => {
   return (
-    <section id="work" className="max-w-[900px] m-auto py-20 md:py-28">
+    <section id="work" className="max-w-[900px] m-auto py-20">
       <NumberedHeading title="Some Things I’ve Built" />
       <FeaturedProjects featuredProjects={featuredProjects} />
     </section>
