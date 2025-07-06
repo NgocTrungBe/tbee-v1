@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FC } from "react";
-import SkillBox from "./SkillBox";
+import SkillTag from "./SkillBox";
 import { SKill } from "@/types";
 import { easeOut, motion } from "framer-motion";
 
@@ -40,7 +40,7 @@ const SkillList: FC<Props> = ({ skills }) => {
     >
       {skills.map((skill, i) => (
         <motion.div key={i} variants={fadeUp}>
-          <SkillBox icon={skill.icon} name={skill.name} />
+          <SkillTag icon={skill.icon} name={skill.name} />
         </motion.div>
       ))}
     </motion.ul>

@@ -61,7 +61,7 @@ const Hero = () => {
             I specialize in building accessible, performant user interfaces with
             a strong focus on UX best practices and visual consistency. I
             complex UI problems and continuously improving my{" "}
-            <HighlightLink>skills</HighlightLink>.
+            <HighlightLink href="/#skills">skills</HighlightLink>.
           </motion.p>
           <motion.div variants={fadeUp}>
             <ResumeButton path="/" size="large" text="View Full My Resume !" />

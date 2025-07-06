@@ -16,7 +16,7 @@ export const jobs = [
   {
     date: "",
     title: "Internship",
-    company: "Yousoft",
+    company: "Yousoft Viet Nam",
     location: "Dien Bien Phu, Binh Thanh",
     range: "2019 - 2020",
     url: "https://yousoft.vn/",

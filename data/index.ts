@@ -11,11 +11,16 @@ export const navs = [
   },
   {
     id: 3,
+    name: "Skills",
+    path: "/#skills",
+  },
+  {
+    id: 4,
     name: "Work",
     path: "/#work",
   },
   {
-    id: 4,
+    id: 5,
     name: "Contact",
     path: "/#contact",
   },

@@ -4,11 +4,11 @@ import { easeOut, motion } from "framer-motion";
 import React, { FC, ReactNode } from "react";
 
 interface Props {
-  children: ReactNode;
+  title: String;
   centered?: boolean;
 }
 
-const NumberedHeading: FC<Props> = ({ children, centered = false }) => {
+const NumberedHeading: FC<Props> = ({ title, centered = false }) => {
   const fadeUp = {
     hidden: { opacity: 0, y: 50 },
     show: {
@@ -28,7 +28,7 @@ const NumberedHeading: FC<Props> = ({ children, centered = false }) => {
       whileInView="show"
       viewport={{ once: true }}
     >
-      {children}
+      {title}
     </motion.h2>
   );
 };
