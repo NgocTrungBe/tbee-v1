@@ -54,7 +54,7 @@ const FeaturedProjects: FC<Props> = ({ featuredProjects }) => {
                   }
                   target="_blank"
                   rel="noreferrer"
-                  className="relative inline-block w-full h-full bg-[#deb0ff] rounded-sm z-1"
+                  className="relative inline-block w-full h-full bg-brand-secondary rounded-sm z-1"
                 >
                   <div className="image-wrapper">
                     <Image

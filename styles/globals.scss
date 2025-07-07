@@ -7,7 +7,7 @@
   --color-lightest-navy: #233554;
   --color-dark-slate: #495670;
   --color-brand-primary: #c084fc;
-  --color-brand-secondary: #e0b3ff;
+  --color-brand-secondary: #deb0ff;
   --color-slate: #8892b0;
   --color-light-slate: #a8b2d1;
   --color-lightest-slate: #ccd6f6;
@@ -154,7 +154,7 @@ body.overlay #content > * {
 }
 
 .avatar-wrapper {
-  @apply relative rounded-lg bg-[#b26dff] transition-all duration-220 ease-custom hover:-translate-x-[4px] hover:-translate-y-[4px] focus:-translate-x-[4px] focus:-translate-y-[4px] cursor-pointer z-3;
+  @apply relative rounded-lg bg-brand-secondary transition-all duration-220 ease-custom hover:-translate-x-[4px] hover:-translate-y-[4px] focus:-translate-x-[4px] focus:-translate-y-[4px] cursor-pointer z-3;
 
   img {
     position: relative;
@@ -168,7 +168,7 @@ body.overlay #content > * {
     position: absolute;
     top: 14px;
     left: 14px;
-    border: 2px solid #b26dff;
+    border: 2px solid var(--color-brand-secondary);
     z-index: -1;
     width: 100%;
     height: 100%;
@@ -260,5 +260,32 @@ body.overlay #content > * {
   z-index: 5;
   @include desktop {
     z-index: unset;
+  }
+}
+
+.video-thumbnail {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-navy);
+    mix-blend-mode: screen;
+    z-index: 3;
+  }
+  img {
+    position: relative;
+    border-radius: 5px;
+    filter: grayscale(100%) contrast(1);
+    mix-blend-mode: multiply;
+  }
+
+  &:hover {
+    img {
+      filter: none;
+      mix-blend-mode: normal;
+    }
   }
 }

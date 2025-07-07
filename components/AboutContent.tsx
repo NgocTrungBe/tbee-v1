@@ -7,15 +7,6 @@ import { easeOut, motion } from "framer-motion";
 import Avatar from "@/assets/me.jpg";
 
 const AboutContent = () => {
-  const container = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
   const fadeUp = {
     hidden: { opacity: 0, y: 50 },
     show: {
@@ -30,14 +21,14 @@ const AboutContent = () => {
   };
 
   return (
-    <motion.div
-      className="block md:grid md:grid-cols-[3fr_2fr] md:gap-[50px]"
-      variants={container}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
-    >
-      <motion.div variants={fadeUp} className="text-slate">
+    <motion.div className="block md:grid md:grid-cols-[3fr_2fr] md:gap-[50px]">
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="text-slate"
+      >
         <p>
           Hello! My name is Ngoc Trung Be. I'm a Front-End Developer with 3
           years of experience specializing in JavaScript (ES6+) and modern
@@ -60,6 +51,9 @@ const AboutContent = () => {
       </motion.div>
       <motion.div
         variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
         className="max-w-[300px] md:m-0 mt-12 m-auto"
       >
         <div className="avatar-wrapper">
