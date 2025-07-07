@@ -41,6 +41,6 @@ export const skills = [
   },
   {
     name: "Git",
-    icon: "icons/Git.svg",
+    icon: "icons/git.svg",
   },
 ];
