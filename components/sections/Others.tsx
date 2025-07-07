@@ -3,7 +3,7 @@
 import React from "react";
 import LazyVideo from "../LazyVideo";
 import { easeOut, motion } from "framer-motion";
-import thumb1 from "/videos/cover-1-thumb.jpg";
+
 const Others = () => {
   const container = {
     hidden: {},
