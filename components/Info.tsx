@@ -1,7 +1,5 @@
 import React from "react";
 import { easeOut, motion } from "framer-motion";
-import IconMail from "./icons/email";
-import IconPhone from "./icons/phone";
 import ClipboardItem from "./ClipboardItem";
 import Icon from "./icons/icon";
 

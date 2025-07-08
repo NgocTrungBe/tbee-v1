@@ -1,7 +1,6 @@
 "use client";
 
 import React, { FC } from "react";
-import IconGitHub from "./icons/github";
 import Image from "next/image";
 import { FeaturedProject } from "@/types";
 import { easeOut, motion } from "framer-motion";
