@@ -23,3 +23,10 @@ export type FeaturedProject = {
   external: string;
   github: string;
 };
+
+export type FormData = {
+  firstname: string;
+  lastname: string;
+  email: string;
+  message: string;
+};

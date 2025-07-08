@@ -77,7 +77,7 @@ const Others = () => {
         <a
           href="https://www.youtube.com/@trungbeofficial9958"
           target="_blank"
-          className="relative text-white font-fira hover:text-brand-primary text-green after:transition-all after:duration-220 after:ease-custom cursor-pointer after:absolute after:left-0 after:-bottom-[1px] after:w-0 after:h-[1px] after:bg-brand-primary hover:after:w-full"
+          className="relative text-lightest-slate font-fira hover:text-brand-primary text-green after:transition-all after:duration-220 after:ease-custom cursor-pointer after:absolute after:left-0 after:-bottom-[1px] after:w-0 after:h-[1px] after:bg-brand-primary hover:after:w-full"
         >
           See more on my channel →
         </a>

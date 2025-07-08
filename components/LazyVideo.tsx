@@ -30,11 +30,12 @@ const VideoModal: React.FC<VideoModalProps> = ({
     <>
       {/* Thumbnail trigger */}
       <motion.button onClick={() => setIsOpen(true)} className="group w-full">
-        <div className="relative video-thumbnail aspect-video rounded-sm overflow-hidden group-hover:-translate-y-4 transition duration-250 ease-custom cursor-pointer bg-brand-secondary shadow-[0_10px_30px_-15px_rgba(2,12,27,0.7)]">
+        <div className="relative video-thumbnail aspect-video rounded-[5px] overflow-hidden  group-hover:-translate-y-4 transition duration-250 ease-custom cursor-pointer bg-brand-secondary shadow-[0_10px_30px_-15px_rgba(2,12,27,0.7)]">
           <img
             src={thumbnailSrc}
             alt={alt}
-            className="w-full h-full object-cover "
+            className="w-full h-full object-cover"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100">
             <svg
