@@ -128,7 +128,7 @@ const ContactForm = () => {
         <button
           type="button"
           disabled={!isValid}
-          className="button w-full sm:w-[200px] px-2 py-2"
+          className="button w-full sm:w-[200px] px-2 py-2.5"
         >
           Submit
         </button>

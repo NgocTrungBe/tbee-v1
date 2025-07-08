@@ -25,3 +25,14 @@ export const navs = [
     path: "/#contact",
   },
 ];
+
+export const socialMedia = [
+  {
+    name: "GitHub",
+    url: "https://github.com/bchiang7",
+  },
+  {
+    name: "Linkedin",
+    url: "https://www.linkedin.com/in/bchiang7",
+  },
+];

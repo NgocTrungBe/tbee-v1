@@ -326,16 +326,11 @@ body.overlay #content > * {
     width: 100%;
     padding: 8px;
     outline: none;
-    // border: 1px solid var(--color-brand-primary);
     border-radius: 4px;
     font-family: var(--font-fira);
     font-size: 14px;
     background-color: #112240;
-
-    &:focus,
-    &:active,
-    &:-webkit-autofill {
-    }
+    height: 42px;
   }
 }
 .button {
@@ -358,5 +353,25 @@ body.overlay #content > * {
     pointer-events: none;
     border-color: #334155;
     color: var(--color-lightest-slate);
+  }
+}
+
+.footer {
+  ul.social-media {
+    a {
+      display: inline-block;
+      transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+      color: var(--color-light-slate);
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      &:hover {
+        svg {
+          color: var(--color-brand-primary);
+        }
+      }
+    }
   }
 }

@@ -3,6 +3,7 @@ import { easeOut, motion } from "framer-motion";
 import IconMail from "./icons/email";
 import IconPhone from "./icons/phone";
 import ClipboardItem from "./ClipboardItem";
+import Icon from "./icons/icon";
 
 const Info = () => {
   const fadeUp = {
@@ -30,7 +31,7 @@ const Info = () => {
         className="mb-2 flex items-center gap-3 relative"
       >
         <div className="icon">
-          <IconMail />
+          <Icon name="Mail" />
         </div>
         <a
           href="mailto:bengoctrung23@gmail.com"
@@ -44,7 +45,7 @@ const Info = () => {
         className="mb-2 flex items-center gap-3 relative"
       >
         <div className="icon">
-          <IconPhone />
+          <Icon name="Phone" />
         </div>
         <p className="text-sm text-lightest-slate">+84 352392573</p>
       </ClipboardItem>

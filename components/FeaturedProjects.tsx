@@ -5,6 +5,7 @@ import IconGitHub from "./icons/github";
 import Image from "next/image";
 import { FeaturedProject } from "@/types";
 import { easeOut, motion } from "framer-motion";
+import Icon from "./icons/icon";
 
 interface Props {
   featuredProjects: FeaturedProject[];
@@ -90,7 +91,7 @@ const FeaturedProjects: FC<Props> = ({ featuredProjects }) => {
                     {project.name}
                   </a>
                 </h3>
-                <div className="relative py-5 lg:bg-light-navy rounded-sm text-[15px] text-light-slate lg:p-6 lg:z-2 shadow-[0_10px_30px_-15px_rgba(2,12,27,0.7)]">
+                <div className="relative py-5 lg:bg-light-navy rounded-sm text-base text-light-slate lg:p-6 lg:z-2 shadow-[0_10px_30px_-15px_rgba(2,12,27,0.7)]">
                   {project.desc}
                 </div>
                 <ul className="my-2.5 flex items-center flex-wrap lg:mt-6 lg:z-2">
@@ -106,7 +107,7 @@ const FeaturedProjects: FC<Props> = ({ featuredProjects }) => {
                 </ul>
                 <div className="-ml-2.5 project-links">
                   <a href={project.github} target="_blank" rel="noreferrer">
-                    <IconGitHub />
+                    <Icon name="GitHub" />
                   </a>
                 </div>
               </div>
