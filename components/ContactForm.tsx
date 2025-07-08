@@ -124,7 +124,7 @@ const ContactForm = () => {
           />
         </div>
       </motion.div>
-      <motion.div className="flex justify-center mt-10" variants={fadeUp}>
+      <motion.div className="flex justify-center mt-7" variants={fadeUp}>
         <button
           type="button"
           disabled={!isValid}

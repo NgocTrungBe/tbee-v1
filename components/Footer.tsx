@@ -36,7 +36,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer min-h-[70px] p-4">
+    <footer className="footer min-h-[70px] p-6">
       <div className="flex flex-col items-center">
         {isMounted && (
           <motion.div
