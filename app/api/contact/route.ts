@@ -31,6 +31,14 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (err) {
-    return NextResponse.json({ error: "Internal error" }, { status: 500 });
+    return NextResponse.json(
+      {
+        error: {
+          type: "Internal error",
+          detail: err instanceof Error ? err.message : String(err),
+        },
+      },
+      { status: 500 }
+    );
   }
 }

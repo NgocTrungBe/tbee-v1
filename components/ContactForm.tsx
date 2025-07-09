@@ -74,6 +74,7 @@ const ContactForm = () => {
     } catch (error) {
       toast.error("An error occurred. Please contact me via email or phone.");
       setIsSubmitting(false);
+      return error;
     }
   };
   return (
