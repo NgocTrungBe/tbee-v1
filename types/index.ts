@@ -25,8 +25,8 @@ export type FeaturedProject = {
 };
 
 export type FormData = {
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   email: string;
   message: string;
 };

@@ -20,6 +20,7 @@
   --tab-width: 170px;
   --tab-max-width: 170px;
   --tab-height: 42px;
+  --hamburger-width: 30px;
 }
 
 html {
@@ -56,7 +57,7 @@ body {
 }
 
 body.overlay {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 body.overlay #content > * {
@@ -81,23 +82,62 @@ body.overlay #content > * {
 }
 
 .burger-transition {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  width: var(--hamburger-width);
+  height: 2px;
+  border-radius: 4px;
+  background-color: var(--color-brand-primary);
+  transition-duration: 0.22s;
+  transition-property: transform;
+  transition-delay: 0s;
+  transform: rotate(0deg);
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: auto;
+    right: 0;
+    width: var(--hamburger-width);
+    height: 2px;
+    border-radius: 4px;
+    background-color: var(--color-brand-primary);
+    transition: transform 0.15s ease;
+  }
+
   &::before {
+    top: -10px;
+    width: 120%;
+    opacity: 1;
     transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
   }
   &::after {
-    transition: bottom 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+    bottom: -10px;
+    width: 80%;
+    transition: bottom 0.1s ease-in 0.25s,
+      transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
   &.active {
+    transition-delay: 0.12s;
+    transform: rotate(225deg);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
     &::before {
       top: 0;
-      width: 30px;
+      width: 120%;
+      opacity: 0;
       transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
     }
     &::after {
       bottom: 0;
-      width: 30px;
+      width: 100%;
       transform: rotate(-90deg);
-      transition: bottom 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+      transition: bottom 0.1s ease-out,
+        transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
     }
   }
 }
@@ -331,6 +371,9 @@ body.overlay #content > * {
     font-size: 14px;
     background-color: #112240;
     height: 42px;
+    &.text-area {
+      height: 80px;
+    }
   }
 }
 .button {
@@ -354,6 +397,11 @@ body.overlay #content > * {
     border-color: #334155;
     color: var(--color-lightest-slate);
   }
+  &.submitting:disabled {
+    color: var(--color-brand-primary);
+    border: 1px solid var(--color-brand-primary);
+    background: transparent;
+  }
 }
 
 .footer {
@@ -374,4 +422,19 @@ body.overlay #content > * {
       }
     }
   }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toast-enter {
+  animation: slideInRight 0.4s ease forwards;
 }
