@@ -210,13 +210,23 @@ body.overlay #content > * {
 }
 
 .avatar-wrapper {
-  @apply relative rounded-lg bg-brand-secondary transition-all duration-220 ease-custom hover:-translate-x-[4px] hover:-translate-y-[4px] focus:-translate-x-[4px] focus:-translate-y-[4px] cursor-pointer z-3;
+  @apply relative rounded-lg bg-brand-secondary transition-all duration-220 ease-custom  cursor-pointer z-3;
 
+  &:hover,
+  &focus {
+    transform: translate(-4px, -4px);
+  }
   img {
     position: relative;
-    border-radius: 5px;
+    border-radius: 8px;
     filter: grayscale(100%) contrast(1);
     mix-blend-mode: multiply;
+
+    &:hover,
+    &:focus {
+      filter: none;
+      mix-blend-mode: normal;
+    }
   }
 
   &::after {
