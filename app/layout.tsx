@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Fira_Code, Inter } from "next/font/google";
 import "@/styles/globals.scss";
 import Header from "@/components/Header";
