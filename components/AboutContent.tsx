@@ -5,30 +5,24 @@ import Image from "next/image";
 import { easeOut, motion } from "framer-motion";
 
 import Avatar from "@/assets/me.jpg";
+import { motionBaseProps } from "@/config/animation";
+const fadeUp = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      delay: 0.3,
+      ease: easeOut,
+    },
+  },
+};
 
 const AboutContent = () => {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 50 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        delay: 0.3,
-        ease: easeOut,
-      },
-    },
-  };
-
   return (
     <motion.div className="block md:grid md:grid-cols-[3fr_2fr] md:gap-[50px]">
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="text-slate"
-      >
+      <motion.div variants={fadeUp} {...motionBaseProps} className="text-slate">
         <p>
           Hello! My name is Ngoc Trung Be. I'm a Front-End Developer with 3
           years of experience specializing in JavaScript (ES6+) and modern

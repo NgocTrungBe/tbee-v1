@@ -19,27 +19,29 @@ const VideoModal: React.FC<VideoModalProps> = ({
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
   }, [isOpen]);
 
   return (
     <>
       {/* Thumbnail trigger */}
       <motion.button onClick={() => setIsOpen(true)} className="group w-full">
-        <div className="relative video-thumbnail aspect-video rounded-[5px] overflow-hidden  group-hover:-translate-y-4 transition duration-250 ease-custom cursor-pointer bg-brand-secondary shadow-[0_10px_30px_-15px_rgba(2,12,27,0.7)]">
+        <div
+          className="video-thumbnail relative aspect-video cursor-pointer overflow-hidden 
+            rounded-[5px] bg-brand-secondary 
+            shadow-[0_10px_30px_-15px_rgba(2,12,27,0.7)]
+            transition duration-250 ease-custom group-hover:-translate-y-4
+          "
+        >
           <img
             src={thumbnailSrc}
             alt={alt}
-            className="w-full h-full object-cover"
             loading="lazy"
+            className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100">
+          <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100">
             <svg
-              className="w-12 h-12 text-brand-lightest-slate"
+              className="h-12 w-12 text-brand-lightest-slate"
               viewBox="0 0 24 24"
               fill="currentColor"
             >
@@ -53,14 +55,17 @@ const VideoModal: React.FC<VideoModalProps> = ({
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-navy backdrop-blur-lg cursor-pointer"
+            className="fixed inset-0 z-100 flex items-center justify-center cursor-pointer bg-navy p-4 backdrop-blur-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsOpen(false)}
           >
             <motion.div
-              className="w-full max-w-xl aspect-video bg-black rounded-xl overflow-hidden"
+              className="
+                aspect-video w-full max-w-xl overflow-hidden 
+                rounded-xl bg-black
+              "
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
@@ -72,7 +77,7 @@ const VideoModal: React.FC<VideoModalProps> = ({
                 poster={poster}
                 controls
                 autoPlay
-                className="w-full h-full"
+                className="h-full w-full"
               />
             </motion.div>
           </motion.div>

@@ -3,22 +3,23 @@ import { easeOut, motion } from "framer-motion";
 import ClipboardItem from "./ClipboardItem";
 import Icon from "./icons/icon";
 
-const Info = () => {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 50 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        delay: 0.3,
-        ease: easeOut,
-      },
+const fadeUp = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      delay: 0.3,
+      ease: easeOut,
     },
-  };
+  },
+};
+
+const Info = () => {
   return (
     <motion.div
-      className="w-full flex items-center justify-center flex-col sm:flex-row gap-1 sm:gap-6"
+      className="flex w-full flex-col items-center justify-center gap-1 sm:flex-row sm:gap-6"
       variants={fadeUp}
       initial="hidden"
       whileInView="show"
@@ -26,7 +27,7 @@ const Info = () => {
     >
       <ClipboardItem
         textToCopy="bengoctrung23@gmail.com"
-        className="mb-2 flex items-center gap-3 relative"
+        className="relative mb-2 flex items-center gap-3"
       >
         <div className="icon">
           <Icon name="Mail" />
@@ -38,9 +39,10 @@ const Info = () => {
           bengoctrung23@gmail.com
         </a>
       </ClipboardItem>
+
       <ClipboardItem
         textToCopy="+84 352392573"
-        className="mb-2 flex items-center gap-3 relative"
+        className="relative mb-2 flex items-center gap-3"
       >
         <div className="icon">
           <Icon name="Phone" />

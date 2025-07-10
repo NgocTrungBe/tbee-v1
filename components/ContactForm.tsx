@@ -1,7 +1,8 @@
-import { FormData } from "@/types";
 import { easeOut, motion } from "framer-motion";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { container } from "@/config/animation";
+import { FormData } from "@/types";
 
 const initialFormData = {
   firstName: "",
@@ -10,27 +11,19 @@ const initialFormData = {
   message: "",
 };
 
-const ContactForm = () => {
-  const container = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.15,
-      },
+const fadeUp = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: easeOut,
     },
-  };
+  },
+};
 
-  const fadeUp = {
-    hidden: { opacity: 0, y: 20 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: easeOut,
-      },
-    },
-  };
+const ContactForm = () => {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [emailError, setEmailError] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -40,6 +33,7 @@ const ContactForm = () => {
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
   const handleBlurEmail = () => {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(formData.email)) {
       setEmailError("Email is invalid.");
@@ -77,16 +71,18 @@ const ContactForm = () => {
       return error;
     }
   };
+
   return (
     <>
       <motion.form
-        className="form w-full mt-12"
+        className="form mt-12 w-full"
         variants={container}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
         onSubmit={handleSubmit}
       >
+        {/* Name fields */}
         <motion.div
           className="flex flex-wrap items-center sm:flex-nowrap sm:gap-4"
           variants={fadeUp}
@@ -107,9 +103,7 @@ const ContactForm = () => {
           </div>
           <div className="mb-5 w-full">
             <div className="form-label">
-              <label htmlFor="lastName" className="form-label">
-                Last Name
-              </label>
+              <label htmlFor="lastName">Last Name</label>
             </div>
             <input
               type="text"
@@ -122,11 +116,11 @@ const ContactForm = () => {
             />
           </div>
         </motion.div>
+
+        {/* Email field */}
         <motion.div className="mb-5" variants={fadeUp}>
           <div className="form-label">
-            <label htmlFor="email" className="form-label">
-              Email
-            </label>
+            <label htmlFor="email">Email</label>
           </div>
           <input
             type="text"
@@ -142,11 +136,11 @@ const ContactForm = () => {
             <p className="mt-3 text-xs font-fira text-red-400">{emailError}</p>
           )}
         </motion.div>
+
+        {/* Message field */}
         <motion.div className="mb-5" variants={fadeUp}>
           <div className="form-label">
-            <label htmlFor="message" className="form-label">
-              Message
-            </label>
+            <label htmlFor="message">Message</label>
           </div>
           <textarea
             id="message"
@@ -157,18 +151,22 @@ const ContactForm = () => {
             onChange={handleChange}
           />
         </motion.div>
-        <motion.div className="flex justify-center mt-10" variants={fadeUp}>
+
+        {/* Submit button */}
+        <motion.div className="mt-10 flex justify-center" variants={fadeUp}>
           <button
             type="submit"
             disabled={!isValid}
-            className={`button w-full sm:w-[200px] px-2 py-3 sm:py-2.5 ${
+            className={`button w-full px-2 py-3 sm:w-[200px] sm:py-2.5 ${
               isSubmitting ? "submitting" : ""
             }`}
           >
-            {`${isSubmitting ? "Submitting..." : "Send Message"}`}
+            {isSubmitting ? "Submitting..." : "Send Message"}
           </button>
         </motion.div>
       </motion.form>
+
+      {/* Toaster */}
       <Toaster
         position="top-center"
         toastOptions={{

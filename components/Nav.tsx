@@ -4,31 +4,31 @@ import { motion, easeOut } from "framer-motion";
 import ResumeButton from "./ResumeButton";
 import { navs } from "@/data";
 import Image from "next/image";
-
 import Logo from "@/assets/logo.png";
 
-const Nav = () => {
-  const container = {
-    hidden: {},
-    show: {
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.15,
-      },
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.15,
     },
-  };
+  },
+};
 
-  const fadeDown = {
-    hidden: { opacity: 0, y: -20 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: easeOut,
-      },
+const fadeDown = {
+  hidden: { opacity: 0, y: -20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: easeOut,
     },
-  };
+  },
+};
+
+const Nav = () => {
   return (
     <motion.nav
       variants={container}

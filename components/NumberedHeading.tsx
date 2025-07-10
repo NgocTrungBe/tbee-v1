@@ -9,22 +9,23 @@ interface Props {
   overline?: boolean;
 }
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: easeOut,
+    },
+  },
+};
+
 const NumberedHeading: FC<Props> = ({
   title,
   centered = false,
   overline = false,
 }) => {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 50 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: easeOut,
-      },
-    },
-  };
   return (
     <motion.h2
       className={`numbered-heading ${centered ? "!justify-center" : ""} ${

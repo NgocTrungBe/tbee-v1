@@ -5,35 +5,35 @@ import React, { useEffect, useState } from "react";
 import Icon from "./icons/icon";
 import { easeOut, motion } from "framer-motion";
 
+const fadeIn = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easeOut,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: easeOut,
+    },
+  },
+};
+
 const Footer = () => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
   useEffect(() => {
     const timeout = setTimeout(() => setIsMounted(true), 3200);
     return () => clearTimeout(timeout);
   }, []);
-
-  const fadeIn = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: easeOut,
-      },
-    },
-  };
-
-  const fadeUp = {
-    hidden: { opacity: 0, y: 20 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: easeOut,
-      },
-    },
-  };
 
   return (
     <footer className="footer min-h-[70px] p-6">

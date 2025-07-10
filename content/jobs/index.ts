@@ -9,7 +9,7 @@ export const jobs = [
     content: [
       "Developed internal systems and financial/insurance platforms for Japanese clients using React, Vue/Nuxt, Next.js, Redux, Tailwind CSS, SCSS, Axios.",
       "Maintained and added new features, taking primary responsibility for front-end development in several insurance-related projects.",
-      "Integrated backend APIs and handled complex UI logic and data flow on the front end",
+      "Integrated backend APIs and handled complex UI logic and data flow on the front end.",
       "Collaborated closely with Backend, QC, UI/UX, and BRSE teams to ensure product quality and meet project deadlines.",
     ],
   },

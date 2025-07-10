@@ -17,7 +17,7 @@ const ClipboardItem: FC<Props> = ({ children, textToCopy, className = "" }) => {
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch (err) {
-      console.error("Failed to copy: ", err);
+      return err;
     }
   };
   return (
@@ -27,7 +27,13 @@ const ClipboardItem: FC<Props> = ({ children, textToCopy, className = "" }) => {
         <IconCopy />
         <AnimatePresence>
           {copied && (
-            <div className="absolute -top-[35px] -right-[35px] py-1 px-2.5 bg-lightest-navy rounded-lg text-sm text-lightest-slate font-fira z-20 shadow-[0_10px_30px_-15px_rgba(2,12,27,0.7)] transition duration-200 ease-custom">
+            <div
+              className="absolute -top-[35px] -right-[35px] z-20
+                py-1 px-2.5 rounded-lg text-sm font-fira
+                bg-lightest-navy text-lightest-slate
+                shadow-[0_10px_30px_-15px_rgba(2,12,27,0.7)]
+                transition duration-200 ease-custom"
+            >
               Copied!
             </div>
           )}

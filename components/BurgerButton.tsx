@@ -8,7 +8,7 @@ interface Props {
 const BurgerButton: FC<Props> = ({ isActive, onClick }) => {
   return (
     <button
-      className="relative p-4 mr-[-16px] cursor-pointer z-10"
+      className="relative p-4 -mr-4 cursor-pointer z-10"
       aria-label="Menu"
       onClick={onClick}
     >

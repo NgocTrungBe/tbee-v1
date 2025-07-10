@@ -8,19 +8,20 @@ interface Props {
   jobs: Job[];
 }
 
-const ExperienceTabs: FC<Props> = ({ jobs }) => {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 50 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        delay: 0.3,
-        ease: easeOut,
-      },
+const fadeUp = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      delay: 0.3,
+      ease: easeOut,
     },
-  };
+  },
+};
+
+const ExperienceTabs: FC<Props> = ({ jobs }) => {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   const JobTabClass = (i: number) =>
