@@ -54,7 +54,7 @@ const Menu = () => {
   };
 
   return (
-    <div ref={menuRef} className="md:hidden">
+    <div ref={menuRef} className="lg:hidden">
       <motion.div variants={fadeDown} initial="hidden" animate="show">
         <BurgerButton
           isActive={showMenu}

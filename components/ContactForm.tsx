@@ -91,7 +91,7 @@ const ContactForm = () => {
           className="flex flex-wrap items-center sm:flex-nowrap sm:gap-4"
           variants={fadeUp}
         >
-          <div className="mb-4 w-full">
+          <div className="mb-5 w-full">
             <div className="form-label">
               <label htmlFor="firstName">First Name</label>
             </div>
@@ -105,7 +105,7 @@ const ContactForm = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="mb-4 w-full">
+          <div className="mb-5 w-full">
             <div className="form-label">
               <label htmlFor="lastName" className="form-label">
                 Last Name
@@ -122,7 +122,7 @@ const ContactForm = () => {
             />
           </div>
         </motion.div>
-        <motion.div className="mb-4" variants={fadeUp}>
+        <motion.div className="mb-5" variants={fadeUp}>
           <div className="form-label">
             <label htmlFor="email" className="form-label">
               Email
@@ -142,7 +142,7 @@ const ContactForm = () => {
             <p className="mt-3 text-xs font-fira text-red-400">{emailError}</p>
           )}
         </motion.div>
-        <motion.div className="mb-4" variants={fadeUp}>
+        <motion.div className="mb-5" variants={fadeUp}>
           <div className="form-label">
             <label htmlFor="message" className="form-label">
               Message
@@ -157,11 +157,11 @@ const ContactForm = () => {
             onChange={handleChange}
           />
         </motion.div>
-        <motion.div className="flex justify-center mt-8" variants={fadeUp}>
+        <motion.div className="flex justify-center mt-10" variants={fadeUp}>
           <button
             type="submit"
             disabled={!isValid}
-            className={`button w-full sm:w-[200px] px-2 py-2.5 ${
+            className={`button w-full sm:w-[200px] px-2 py-3 sm:py-2.5 ${
               isSubmitting ? "submitting" : ""
             }`}
           >

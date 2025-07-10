@@ -3,6 +3,9 @@ import Link from "next/link";
 import { motion, easeOut } from "framer-motion";
 import ResumeButton from "./ResumeButton";
 import { navs } from "@/data";
+import Image from "next/image";
+
+import Logo from "@/assets/logo.png";
 
 const Nav = () => {
   const container = {
@@ -33,13 +36,13 @@ const Nav = () => {
       animate="show"
       className="w-full flex items-center justify-between"
     >
-      <motion.div variants={fadeDown}>
-        <Link href={"/"} className="text-mint-500">
-          Logo
+      <motion.div className="logo mt-1 lg:mt-0" variants={fadeDown}>
+        <Link href="/" className="text-mint-500 font-fira text-xl">
+          <Image src={Logo} alt="logo" />
         </Link>
       </motion.div>
 
-      <motion.div className="hidden md:flex items-center">
+      <motion.div className="hidden lg:flex items-center">
         <ul className="flex items-center">
           {navs &&
             navs.map((nav) => (

@@ -8,7 +8,7 @@ import { easeOut, motion } from "framer-motion";
 const Footer = () => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 3000);
+    const timeout = setTimeout(() => setIsMounted(true), 3200);
     return () => clearTimeout(timeout);
   }, []);
 
