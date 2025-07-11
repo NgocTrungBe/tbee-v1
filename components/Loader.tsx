@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import Image from "next/image";
-import Logo from "@/assets/logo.png";
+import Logo from "@/assets/logo.webp";
 import { motion, useAnimation } from "framer-motion";
 
 const Loader = ({ onAnimationEnd }: { onAnimationEnd: () => void }) => {
@@ -21,6 +21,7 @@ const Loader = ({ onAnimationEnd }: { onAnimationEnd: () => void }) => {
         y: ["0", "-8px", "0"],
         transition: {
           duration: 0.8,
+          delay: 0.3,
           repeat: Infinity,
           ease: "easeInOut",
         },
@@ -64,7 +65,7 @@ const Loader = ({ onAnimationEnd }: { onAnimationEnd: () => void }) => {
           animate={{ width: ["0%", "6%", "35%", "80%", "100%"] }}
           transition={{
             duration: 3,
-            delay: 3.4,
+            delay: 3.7,
             ease: "easeInOut",
           }}
           onAnimationComplete={handleProgressComplete}

@@ -56,14 +56,14 @@ const Others = () => {
         <motion.div variants={fadeUp}>
           <LazyVideo
             videoSrc="/videos/cover-2.mp4"
-            thumbnailSrc="/videos/cover-2-thumb.jpg"
+            thumbnailSrc="/videos/cover-2-thumb.webp"
           />
         </motion.div>
 
         <motion.div variants={fadeUp}>
           <LazyVideo
             videoSrc="/videos/cover-1.mp4"
-            thumbnailSrc="/videos/cover-1-thumb.jpg"
+            thumbnailSrc="/videos/cover-1-thumb.webp"
           />
         </motion.div>
       </motion.div>

@@ -40,7 +40,7 @@ export const metadata = {
     siteName: "Ngoc Trung Be Portfolio",
     images: [
       {
-        url: "https://www.bengoctrung.com/og-image.png",
+        url: "https://www.bengoctrung.com/og-image.webp",
         width: 1200,
         height: 630,
         alt: "Ngoc Trung Be Portfolio Cover Image",
@@ -54,7 +54,7 @@ export const metadata = {
     title: "Ngoc Trung Be",
     description: "See my portfolio built with React & Next.js",
     creator: "Ngoc Trung Be",
-    images: ["https://www.bengoctrung.com/og-image.png"],
+    images: ["https://www.bengoctrung.com/og-image.webp"],
   },
   metadataBase: new URL("https://www.bengoctrung.com/"),
 };

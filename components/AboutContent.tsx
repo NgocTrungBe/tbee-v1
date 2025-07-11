@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { easeOut, motion } from "framer-motion";
 
-import Avatar from "@/assets/me.jpg";
+import Avatar from "@/assets/me.webp";
 import { motionBaseProps } from "@/config/animation";
 const fadeUp = {
   hidden: { opacity: 0, y: 50 },

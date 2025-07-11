@@ -4,7 +4,7 @@ import { motion, easeOut } from "framer-motion";
 import ResumeButton from "./ResumeButton";
 import { navs } from "@/data";
 import Image from "next/image";
-import Logo from "@/assets/logo.png";
+import Logo from "@/assets/logo.webp";
 
 const container = {
   hidden: {},

@@ -1,4 +1,4 @@
-import portfolioImg from "@/content/featured/tbee.png";
+import portfolioImg from "@/content/featured/tbee.webp";
 
 export const featuredProjects = [
   {
