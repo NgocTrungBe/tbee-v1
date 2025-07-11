@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Loader from "./Loader";
-import { AnimatePresence, motion } from "framer-motion";
 
 const LayoutWrapper = ({
   children,
