@@ -1,7 +1,6 @@
 import { Fira_Code, Inter } from "next/font/google";
 import "@/styles/globals.scss";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
 const firaCode = Fira_Code({
   subsets: ["latin"],
@@ -68,14 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${firaCode.className} ${inter.className} antialiased`}>
-        <Header />
-        <main
-          id="content"
-          className="max-w-screen-xl px-6 w-full mx-auto md:px-24 sm:px-12"
-        >
-          {children}
-        </main>
-        <Footer />
+        <LayoutWrapper children={children} />
       </body>
     </html>
   );

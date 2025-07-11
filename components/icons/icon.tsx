@@ -4,7 +4,6 @@ import IconLinkedin from "./linkedin";
 import IconMail from "./email";
 import IconCopy from "./copy";
 import IconPhone from "./phone";
-import IconLogo from "./logo";
 
 interface Props {
   name: string;
@@ -26,9 +25,6 @@ const Icon: FC<Props> = ({ name }) => {
 
     case "Linkedin":
       return <IconLinkedin />;
-
-    case "Logo":
-      return <IconLogo />;
 
     default:
       return <IconGitHub />;

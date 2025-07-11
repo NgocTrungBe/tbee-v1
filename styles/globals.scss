@@ -2,6 +2,7 @@
 @use "tailwindcss";
 
 @theme {
+  --color-dark-navy: #020c1b;
   --color-navy: #0a192f;
   --color-light-navy: #112240;
   --color-lightest-navy: #233554;
@@ -11,16 +12,17 @@
   --color-slate: #8892b0;
   --color-light-slate: #a8b2d1;
   --color-lightest-slate: #ccd6f6;
-  // #b26dff
+
   --height-navbar: 100px;
   --height-navbar-scroll: 70px;
-  --ease-custom: cubic-bezier(0.645, 0.045, 0.355, 1);
-  --font-fira: "Fira Code", "Fira Code Fallback";
-  --breakpoint-tiny: 26.875rem;
   --tab-width: 170px;
   --tab-max-width: 170px;
   --tab-height: 42px;
   --hamburger-width: 30px;
+
+  --breakpoint-tiny: 26.875rem;
+  --ease-custom: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --font-fira: "Fira Code", "Fira Code Fallback";
 }
 
 html {
