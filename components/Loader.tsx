@@ -14,13 +14,13 @@ const Loader = ({ onAnimationEnd }: { onAnimationEnd: () => void }) => {
       await logoControls.start({
         opacity: 1,
         scale: 1,
-        transition: { duration: 1.5, ease: "easeOut" },
+        transition: { duration: 1.5, delay: 1.5, ease: "easeOut" },
       });
 
       await logoControls.start({
         y: ["0", "-8px", "0"],
         transition: {
-          duration: 1,
+          duration: 0.8,
           repeat: Infinity,
           ease: "easeInOut",
         },
@@ -56,15 +56,15 @@ const Loader = ({ onAnimationEnd }: { onAnimationEnd: () => void }) => {
         className="-top-[40px] w-[300px] h-[4px] bg-gray-800 rounded relative overflow-hidden shadow-inner border border-[rgba(255, 80, 80, 0.6)]"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1, ease: "easeOut" }}
+        transition={{ duration: 0.5, delay: 2.8, ease: "easeOut" }}
       >
         <motion.div
           className="absolute top-0 left-0 h-full bg-brand-primary rounded"
           initial={{ width: "0%" }}
-          animate={{ width: ["0%", "6%", "35%", "90%", "100%"] }}
+          animate={{ width: ["0%", "6%", "35%", "80%", "100%"] }}
           transition={{
             duration: 3,
-            delay: 2.1,
+            delay: 3.4,
             ease: "easeInOut",
           }}
           onAnimationComplete={handleProgressComplete}
