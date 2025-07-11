@@ -19,7 +19,7 @@ const inter = Inter({
 export const metadata = {
   title: "Ngoc Trung Be",
   description:
-    "Experienced React & Next.js Front-End Developer portfolio with real-world projects and clean UI/UX.",
+    "Front-End Developer portfolio with real-world projects and clean UI/UX.",
   keywords: [
     "Front-End",
     "React",
@@ -36,14 +36,14 @@ export const metadata = {
   openGraph: {
     title: "Ngoc Trung Be",
     description: "Showcasing projects built with React, Next.js, Tailwind CSS.",
-    url: "https://tbee.dev",
-    siteName: "Tbee Portfolio",
+    url: "https://www.bengoctrung.com/",
+    siteName: "Ngoc Trung Be Portfolio",
     images: [
       {
-        url: "https://tbee.dev/og-image.jpg",
+        url: "https://www.bengoctrung.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Tbee Portfolio Cover Image",
+        alt: "Ngoc Trung Be Portfolio Cover Image",
       },
     ],
     locale: "en_US",
@@ -53,10 +53,10 @@ export const metadata = {
     card: "summary_large_image",
     title: "Ngoc Trung Be",
     description: "See my portfolio built with React & Next.js",
-    creator: "@tbee_dev",
-    images: ["https://tbee.dev/og-image.jpg"],
+    creator: "Ngoc Trung Be",
+    images: ["https://www.bengoctrung.com/og-image.jpg"],
   },
-  metadataBase: new URL("https://tbee.dev"),
+  metadataBase: new URL("https://www.bengoctrung.com/"),
 };
 
 export default function RootLayout({
