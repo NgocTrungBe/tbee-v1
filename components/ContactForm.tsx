@@ -1,7 +1,7 @@
 import { easeOut, motion } from "framer-motion";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { container } from "@/config/animation";
+import { motionBaseProps } from "@/config/animation";
 import { FormData } from "@/types";
 
 const initialFormData = {
@@ -17,7 +17,7 @@ const fadeUp = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.8,
       ease: easeOut,
     },
   },
@@ -76,16 +76,15 @@ const ContactForm = () => {
     <>
       <motion.form
         className="form mt-12 w-full"
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
+        // variants={container}
+        // {...motionBaseProps}
         onSubmit={handleSubmit}
       >
         {/* Name fields */}
         <motion.div
           className="flex flex-wrap items-center sm:flex-nowrap sm:gap-4"
           variants={fadeUp}
+          {...motionBaseProps}
         >
           <div className="mb-5 w-full">
             <div className="form-label">
@@ -118,7 +117,7 @@ const ContactForm = () => {
         </motion.div>
 
         {/* Email field */}
-        <motion.div className="mb-5" variants={fadeUp}>
+        <motion.div className="mb-5" variants={fadeUp} {...motionBaseProps}>
           <div className="form-label">
             <label htmlFor="email">Email</label>
           </div>
@@ -138,7 +137,7 @@ const ContactForm = () => {
         </motion.div>
 
         {/* Message field */}
-        <motion.div className="mb-5" variants={fadeUp}>
+        <motion.div className="mb-5" variants={fadeUp} {...motionBaseProps}>
           <div className="form-label">
             <label htmlFor="message">Message</label>
           </div>
@@ -153,7 +152,11 @@ const ContactForm = () => {
         </motion.div>
 
         {/* Submit button */}
-        <motion.div className="mt-10 flex justify-center" variants={fadeUp}>
+        <motion.div
+          className="mt-10 flex justify-center"
+          variants={fadeUp}
+          {...motionBaseProps}
+        >
           <button
             type="submit"
             disabled={!isValid}

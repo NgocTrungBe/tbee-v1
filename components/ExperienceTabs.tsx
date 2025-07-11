@@ -3,6 +3,7 @@
 import { Job } from "@/types";
 import React, { FC, useState } from "react";
 import { AnimatePresence, easeOut, motion } from "framer-motion";
+import { motionBaseProps } from "@/config/animation";
 
 interface Props {
   jobs: Job[];
@@ -38,9 +39,7 @@ const ExperienceTabs: FC<Props> = ({ jobs }) => {
     <motion.div
       className="flex flex-col sm:flex-row"
       variants={fadeUp}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
+      {...motionBaseProps}
     >
       {/* Tabs */}
       <div

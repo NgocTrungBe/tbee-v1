@@ -45,9 +45,7 @@ const AboutContent = () => {
       </motion.div>
       <motion.div
         variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
+        {...motionBaseProps}
         className="max-w-[300px] md:m-0 mt-12 m-auto"
       >
         <div className="avatar-wrapper">

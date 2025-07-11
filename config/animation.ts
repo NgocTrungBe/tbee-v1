@@ -1,7 +1,7 @@
 export const motionBaseProps = {
   initial: "hidden",
   whileInView: "show",
-  viewport: { once: true },
+  viewport: { once: true, amount: 0.3 },
 };
 
 export const container = {

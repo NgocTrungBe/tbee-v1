@@ -8,7 +8,7 @@ import { useClickOutside } from "@/hooks";
 import { easeOut, motion } from "framer-motion";
 
 const fadeDown = {
-  hidden: { opacity: 0, y: -20 },
+  hidden: { opacity: 0, y: -30 },
   show: {
     opacity: 1,
     y: 0,

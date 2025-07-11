@@ -1,5 +1,6 @@
 "use client";
 
+import { motionBaseProps } from "@/config/animation";
 import { easeOut, motion } from "framer-motion";
 import React, { FC } from "react";
 
@@ -34,9 +35,7 @@ const NumberedHeading: FC<Props> = ({
           : ""
       }`}
       variants={fadeUp}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
+      {...motionBaseProps}
     >
       {title}
     </motion.h2>

@@ -1,4 +1,4 @@
-import portfolioImg from "@/content/featured/halcyon.png";
+import portfolioImg from "@/content/featured/tbee.png";
 
 export const featuredProjects = [
   {

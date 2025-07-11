@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FeaturedProject } from "@/types";
 import { easeOut, motion } from "framer-motion";
 import Icon from "./icons/icon";
+import { motionBaseProps } from "@/config/animation";
 interface Props {
   featuredProjects: FeaturedProject[];
 }
@@ -36,9 +37,7 @@ const FeaturedProjects: FC<Props> = ({ featuredProjects }) => {
                 lg:mb-24 lg:shadow-none
               "
               variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
+              {...motionBaseProps}
             >
               <div
                 className={`project-image relative z-1 opacity-[.25] 

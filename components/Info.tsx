@@ -2,6 +2,7 @@ import React from "react";
 import { easeOut, motion } from "framer-motion";
 import ClipboardItem from "./ClipboardItem";
 import Icon from "./icons/icon";
+import { motionBaseProps } from "@/config/animation";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 50 },
@@ -21,9 +22,7 @@ const Info = () => {
     <motion.div
       className="flex w-full flex-col items-center justify-center gap-1 sm:flex-row sm:gap-6"
       variants={fadeUp}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
+      {...motionBaseProps}
     >
       <ClipboardItem
         textToCopy="bengoctrung23@gmail.com"
