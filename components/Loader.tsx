@@ -54,7 +54,7 @@ const Loader = ({ onAnimationEnd }: { onAnimationEnd: () => void }) => {
       </motion.div>
 
       <motion.div
-        className="-top-[40px] w-[300px] h-[4px] bg-gray-800 rounded relative overflow-hidden shadow-inner border border-[rgba(255, 80, 80, 0.6)]"
+        className="-top-[40px] w-[230px] md:w-[280px] h-[4px] bg-gray-800 rounded relative overflow-hidden shadow-inner border border-[rgba(255, 80, 80, 0.6)]"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 2.8, ease: "easeOut" }}

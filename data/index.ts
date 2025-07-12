@@ -29,7 +29,7 @@ export const navs = [
 export const socialMedia = [
   {
     name: "GitHub",
-    url: "https://github.com/NgocTrungBe/tbee-v1",
+    url: "https://github.com/NgocTrungBe/",
   },
   {
     name: "Linkedin",
