@@ -11,7 +11,7 @@ const fadeUp = {
     y: 0,
     transition: {
       duration: 1,
-      delay: 0.3,
+      delay: 0.4,
       ease: easeOut,
     },
   },

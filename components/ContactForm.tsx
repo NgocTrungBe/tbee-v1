@@ -1,7 +1,7 @@
 import { easeOut, motion } from "framer-motion";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { motionBaseProps } from "@/config/animation";
+import { container, motionBaseProps } from "@/config/animation";
 import { FormData } from "@/types";
 
 const initialFormData = {
@@ -76,9 +76,8 @@ const ContactForm = () => {
     <>
       <motion.form
         className="form mt-12 w-full"
-        // variants={container}
-        // {...motionBaseProps}
         onSubmit={handleSubmit}
+        variants={container}
       >
         {/* Name fields */}
         <motion.div
