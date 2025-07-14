@@ -1,6 +1,5 @@
 import { Fira_Code, Inter } from "next/font/google";
 import "@/styles/globals.scss";
-import LayoutWrapper from "@/components/LayoutWrapper";
 
 const firaCode = Fira_Code({
   subsets: ["latin"],
