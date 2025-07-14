@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const NotFound = () => {
@@ -7,12 +8,12 @@ const NotFound = () => {
       <h2 className="mt-4 mb-10 text-4xl text-lightest-slate">
         Page Not Found
       </h2>
-      <a
+      <Link
         href="/"
         className="button w-[120px] text-center px-2 py-3 text-lg font-fira font-bold"
       >
         Go Home
-      </a>
+      </Link>
     </div>
   );
 };
