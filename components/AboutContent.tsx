@@ -32,9 +32,9 @@ const AboutContent = () => {
         </p>
         <br />
         <p>
-          I've worked closely with designers, back-end developers, and product
-          teams in Agile environments to deliver features efficiently and
-          consistently.
+          I've collaborated closely with designers, back-end developers, and
+          product teams in Agile environments to deliver features efficiently
+          and consistently.
         </p>
         <br />
         <p>
@@ -45,7 +45,7 @@ const AboutContent = () => {
       <motion.div
         variants={fadeUp}
         {...motionBaseProps}
-        className="max-w-[300px] md:m-0 mt-12 m-auto"
+        className="max-w-[220px] md:m-0 mt-12 m-auto"
       >
         <div className="avatar-wrapper">
           <Image src={Avatar} alt="my-avatar" className="rounded-lg" />

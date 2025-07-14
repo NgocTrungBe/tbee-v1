@@ -25,22 +25,20 @@ const LayoutWrapper = ({
     }
   }, [isLoading]);
 
+  if (isLoading) {
+    return <Loader onAnimationEnd={() => setIsLoading(false)} />;
+  }
+
   return (
     <>
-      {isLoading ? (
-        <Loader onAnimationEnd={() => setIsLoading(false)} />
-      ) : (
-        <>
-          <Header />
-          <main
-            id="content"
-            className="max-w-screen-xl px-6 w-full mx-auto md:px-24 sm:px-12"
-          >
-            {children}
-          </main>
-          <Footer />
-        </>
-      )}
+      <Header />
+      <main
+        id="content"
+        className="max-w-screen-xl px-6 w-full mx-auto md:px-24 sm:px-12"
+      >
+        {children}
+      </main>
+      <Footer />
     </>
   );
 };

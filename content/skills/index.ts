@@ -1,10 +1,10 @@
 export const skills = [
   {
-    name: "Javascript",
+    name: "JavaScript",
     icon: "/icons/js.svg",
   },
   {
-    name: "Typescript",
+    name: "TypeScript",
     icon: "icons/ts.svg",
   },
   {

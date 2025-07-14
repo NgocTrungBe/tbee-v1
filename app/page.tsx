@@ -5,10 +5,11 @@ import Skills from "@/components/sections/Skills";
 import Featured from "@/components/sections/Featured";
 import Others from "@/components/sections/Others";
 import Contact from "@/components/sections/Contact";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
 export default function Home() {
   return (
-    <>
+    <LayoutWrapper>
       <Hero />
       <About />
       <Experience />
@@ -16,6 +17,6 @@ export default function Home() {
       <Featured />
       <Others />
       <Contact />
-    </>
+    </LayoutWrapper>
   );
 }

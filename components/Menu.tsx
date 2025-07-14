@@ -80,7 +80,7 @@ const Menu = () => {
               </Link>
             </li>
           ))}
-          <ResumeButton path="/" />
+          <ResumeButton path="/resume.pdf" />
         </ul>
       </aside>
     </div>

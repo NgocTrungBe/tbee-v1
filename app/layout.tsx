@@ -67,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${firaCode.className} ${inter.className} antialiased`}>
-        <LayoutWrapper> {children}</LayoutWrapper>
+        {children}
       </body>
     </html>
   );

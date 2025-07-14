@@ -60,7 +60,7 @@ const Nav = () => {
               </motion.li>
             ))}
           <motion.li variants={fadeDown}>
-            <ResumeButton path="/" />
+            <ResumeButton path="/resume.pdf" />
           </motion.li>
         </ul>
       </motion.div>

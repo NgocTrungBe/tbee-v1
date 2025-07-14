@@ -58,13 +58,17 @@ const Hero = () => {
             variants={fadeUp}
             className="max-w-[540px] mb-12 text-slate text-base break-words whitespace-pre-line"
           >
-            I specialize in building accessible, performant user interfaces with
-            a strong focus on UX best practices and visual consistency. I
-            complex UI problems and continuously improving my{" "}
-            <HighlightLink href="/#skills">skills</HighlightLink>.
+            I specialize in building accessible, high-performance user
+            interfaces with a user-centered experience, focusing on
+            meticulousness and consistency in design, and continuously improving
+            my <HighlightLink href="/#skills">skills</HighlightLink>.
           </motion.p>
           <motion.div variants={fadeUp}>
-            <ResumeButton path="/" size="large" text="View Full My Resume !" />
+            <ResumeButton
+              path="/resume.pdf"
+              size="large"
+              text="View My Full Resume!"
+            />
           </motion.div>
         </motion.div>
       )}
