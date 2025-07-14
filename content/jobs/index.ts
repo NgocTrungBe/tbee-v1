@@ -4,7 +4,7 @@ export const jobs = [
     title: "Developer",
     company: "Teqnological Asia",
     location: "Pho Quang, Tan Binh",
-    range: "Apr 2022 – Mar 2025",
+    range: "Apr 2022 – Now",
     url: "https://teqnological.asia/",
     content: [
       "Developed internal systems and financial/insurance platforms for Japanese clients using React, Vue/Nuxt, Next.js, Redux, Tailwind CSS, SCSS, Axios.",
